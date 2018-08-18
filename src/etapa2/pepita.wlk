@@ -6,12 +6,29 @@ import comidas.*
 object pepita {
 	var energia = 0
 	method energia() { return energia }
-	method comer(cosa, gramos) { energia += cosa.energiaPorGramo() * gramos }
-	method volar(kms) { energia -= kms + 10 }
+	method comer(cosa, gramos) { 
+		energia += cosa.energiaPorGramo() * gramos
+	}
+	method volar(kms) { 
+		energia -= kms + 10
+	}
 	
 	// metodos nuevos
-	method estaDebil() { return true }  // implementar
-	method estaFeliz() { return true }  // implementar
+	method estaDebil() { 
+		var status = false
+		if(energia < 50 ){
+			status = true
+		}
+		return status
+		
+	}  // implementar
+	method estaFeliz() { 
+		var status = false
+		if(energia > 500 && energia < 1000){
+			status = true
+		}
+		return status
+	}  // implementar
 	
 	method cuantoQuiereVolar() { 
 		var cuanto = self.energia() / 5
@@ -23,12 +40,19 @@ object pepita {
 	method salirAComer() {
 		self.volar(5)		// "self" es una referencia al objeto que recibe el mensaje
 		// ... completar este metodo con las otra acciones sobre self
+		self.comer(alpiste,80)
+		self.volar(5)
 	}
 	
 	method haceLoQueQuieras() { 
 		if (self.estaDebil()) {
 			// completar
-		} 
+			self.comer(alpiste,20)
+		} else if (self.estaFeliz()){
+			self.volar(8)
+		} else{
+			
+		}
 		// completar el método, de acuerdo a la estructura
 		// que se deja comentada aca abajo
 //		else if (... otra condicion ...) {
