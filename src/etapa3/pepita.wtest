@@ -1,0 +1,10 @@
+import pepita.*
+
+// auto-generated at 27/08/2018 18:47:25
+test "exported test from REPL session" {
+	
+	pepita
+	pepita.comer(alpiste,20)
+	assert.equals ( 330, pepita.energia())
+	
+}
