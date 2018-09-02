@@ -1,31 +1,9 @@
-
-object pepon {
-	var energia = 0 // aca falta un atributo
+object pipa{
 	
-	method energia(){
-		return energia
-	}
-	method comer(cosa, cuanto) {
-		energia = cosa.energiaPorGramo() * 0,5 * cuanto
-	}  
+	var property energia = 0
 	
-	method volar(kms) { 
-		energia -= 1 + (kms * 0,5)  
-	}           
-	method haceLoQueQuieras() {
-		self.volar(1)
-	}   
-}
-
-// implementar el objeto entero, salvo haceLoQueQuieras que lo damos hecho
-// ayuda: conviene ponerle dos atributos
-object pipa {
-	/*
-	 * cuando le dicen a pipa que haga lo que quiera, no hace nada
-	 */
-	 
-	var kmsVolados = 0
-	var gramosComidos = 0 
+	var property kmsVolados = 0
+	var property gramosComidos = 0 
 	
 	method volar(kms){
 		
@@ -46,4 +24,26 @@ object pipa {
 	
 	method haceLoQueQuieras() { }   // queda asi
 	// pregunta: ¿por qué es necesario agregar este método, sin código
+	//para asegurar el polimorfismo y  que roque pueda entrenar a todas las aves.
 }
+
+object pepon{
+	var energia = 0 // aca falta un atributo
+	
+	method energia(){
+		return energia
+	}
+	method comer(cosa,cuanto) {
+		energia += cosa.energiaPorGramo() * 0,5 * cuanto
+	}
+	
+	method volar(kms) { 
+		energia -= 1 + kms * 0,5
+	}           
+	method haceLoQueQuieras() {
+		self.volar(1)
+	}   
+}
+
+// implementar el objeto entero, salvo haceLoQueQuieras que lo damos hecho
+// ayuda: conviene ponerle dos atributos

@@ -1,0 +1,26 @@
+import pepita.*
+import comidas.*
+import roque.*
+import masAves.*
+
+
+
+test "alimentar a pepita"{
+	assert.equals(0, pepita.energia())
+	pepita.comer(alpiste,80)
+	assert.equals (320, pepita.energia())
+	
+}
+
+test "aliminat a pepon"{
+	assert.equals (0,pepon.energia())
+	pepon.comer(alpiste, 80)
+	//assert.equals (160, pepon.energia())
+	
+}
+
+test "alimentar a pipa"{
+	assert.equals (0, pipa.energia())
+	pipa.comer(alpiste, 80)
+	assert.equals (80 , pipa.gramosIngeridos())
+}
