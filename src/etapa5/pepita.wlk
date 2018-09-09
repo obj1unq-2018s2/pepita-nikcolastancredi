@@ -19,17 +19,20 @@ object sierrasCordobesas{
 }
 
 object marDelPlata{
-	var esTemporadaAlta = false 
-	
+	var property esTemporadaAlta = false 
+	var energiaEntregada = 0
 	method energiaPorUbicacion(){
-		if(esTemporadaAlta == true){
-			return 80
+		if(esTemporadaAlta) { 
+			energiaEntregada = 80
 		} else{
-			return 20
+			energiaEntregada = 20
 			
 			}
+		return energiaEntregada 
 	}
 }
+
+
 object pepita {
 	var energia = 0
 	method energia() { return energia }
