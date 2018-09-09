@@ -19,15 +19,10 @@ object sierrasCordobesas{
 }
 
 object marDelPlata{
-	var state = 1
-	method laTemporadaEsBaja{
-			state = 0
-	}
-	method laTemporadaEsAlta{
-			state = 1
-	}
+	var esTemporadaAlta = false 
+	
 	method energiaPorUbicacion(){
-		if(state == 0){
+		if(esTemporadaAlta == true){
 			return 80
 		} else{
 			return 20

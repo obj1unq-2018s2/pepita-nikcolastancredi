@@ -1,0 +1,10 @@
+import pepita.*
+import comidas.*
+
+test "pepita a BuenosAires"{
+	assert.equals (0,pepita.energia())
+	pepita.comer(alpiste,80)
+	assert.equals (320,pepita.energia())
+	pepita.deVisitaA(sierrasCordobesas)
+	assert.equals(390 , pepita.energia())
+}

@@ -27,22 +27,20 @@ object pipa{
 	//para asegurar el polimorfismo y  que roque pueda entrenar a todas las aves.
 }
 
-object pepon{
+object pepon {
 	var energia = 0 // aca falta un atributo
 	
 	method energia(){
 		return energia
 	}
+	method volar(kms) { 
+		energia -= 1 + kms * 0,5
+	}
 	method comer(cosa,cuanto) {
 		energia += cosa.energiaPorGramo() * 0,5 * cuanto
 	}
 	
-	method volar(kms) { 
-		energia -= 1 + kms * 0,5
-	}           
-	method haceLoQueQuieras() {
-		self.volar(1)
-	}   
+	method haceLoQueQuieras() {self.volar(1)}   
 }
 
 // implementar el objeto entero, salvo haceLoQueQuieras que lo damos hecho
